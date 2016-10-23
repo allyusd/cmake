@@ -1,4 +1,7 @@
-mkdir build
-cd build
+mkdir _build
+cd _build
 cmake ..
-make
+
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+    make
+fi

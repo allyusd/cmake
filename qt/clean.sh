@@ -1,1 +1,1 @@
-rm -r -f build
+rm -r -f _build
