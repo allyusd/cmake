@@ -8,10 +8,12 @@ set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
+set(SrcDir ../src)
+
 add_library (MyProjectLib
-	mainwindow.h mainwindow.cpp mainwindow.ui)
+	${SrcDir}/mainwindow.h ${SrcDir}/mainwindow.cpp ${SrcDir}/mainwindow.ui)
 
 target_link_libraries (MyProjectLib Qt5::Widgets)
 
-add_executable(MyProject main.cpp resources/resources.qrc)
+add_executable(MyProject ${SrcDir}/main.cpp ${SrcDir}/resources/resources.qrc)
 target_link_libraries (MyProject MyProjectLib)
