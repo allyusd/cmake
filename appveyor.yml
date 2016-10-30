@@ -3,4 +3,4 @@ build_script:
 - cmd: >-
     cd qt/cmake
     
-    Run.bat
+    _Run.bat
