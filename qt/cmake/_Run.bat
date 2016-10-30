@@ -3,4 +3,4 @@ SET PATH=%PATH%;C:\Program Files (x86)\MSBuild\14.0\Bin
 
 sh run.sh
 
-msbuild _build/MyProject.sln
+msbuild _build/CMakeQt.sln

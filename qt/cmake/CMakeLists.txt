@@ -1,5 +1,5 @@
 cmake_minimum_required (VERSION 2.8.12)
-project (MyProject)
+project (CMakeQt)
 
 find_package(Qt5 COMPONENTS Core Widgets REQUIRED)
 
@@ -16,7 +16,7 @@ set(ALL_FILES
   ${SrcDir}/resources/resources.qrc
 )
 
-add_library(MyProjectLib ${ALL_FILES})
+add_library(${PROJECT_NAME}Lib ${ALL_FILES})
 
 # for the VS folders to mirror the folder structure of your project
 foreach(FILE ${ALL_FILES}) 
@@ -34,7 +34,7 @@ foreach(FILE ${ALL_FILES})
   source_group("${GROUP}" FILES "${FILE}")
 endforeach()
 
-target_link_libraries (MyProjectLib Qt5::Widgets)
+target_link_libraries(${PROJECT_NAME}Lib Qt5::Widgets)
 
-add_executable(MyProject ${SrcDir}/main.cpp)
-target_link_libraries (MyProject MyProjectLib)
+add_executable(${PROJECT_NAME} ${SrcDir}/main.cpp)
+target_link_libraries(${PROJECT_NAME} ${PROJECT_NAME}Lib)
