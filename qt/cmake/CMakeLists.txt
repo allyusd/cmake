@@ -13,6 +13,7 @@ set(SrcDir ../src)
 set(ALL_FILES
   ${SrcDir}/mainwindow.h ${SrcDir}/mainwindow.cpp ${SrcDir}/mainwindow.ui
   ${SrcDir}/tools/tool.h ${SrcDir}/tools/tool.cpp
+  ${SrcDir}/resources/resources.qrc
 )
 
 add_library(MyProjectLib ${ALL_FILES})
@@ -35,5 +36,5 @@ endforeach()
 
 target_link_libraries (MyProjectLib Qt5::Widgets)
 
-add_executable(MyProject ${SrcDir}/main.cpp ${SrcDir}/resources/resources.qrc)
+add_executable(MyProject ${SrcDir}/main.cpp)
 target_link_libraries (MyProject MyProjectLib)
