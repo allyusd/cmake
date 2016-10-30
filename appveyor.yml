@@ -2,4 +2,5 @@ version: 1.0.{build}
 build_script:
 - cmd: >-
     cd qt/cmake
+    
     Run.bat
