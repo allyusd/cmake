@@ -31,6 +31,9 @@ foreach(FILE ${ALL_FILES})
   source_group("${GROUP}" FILES "${FILE}")
 endforeach()
 
+# add automoc file and autorcc file to group
+source_group("zzzautofile" REGULAR_EXPRESSION "(.*_automoc\\.cpp|qrc_.*)")
+
 target_link_libraries(${PROJECT_NAME}Lib Qt5::Widgets)
 
 add_executable(${PROJECT_NAME} ${SOURCE_DIR}/main.cpp)
