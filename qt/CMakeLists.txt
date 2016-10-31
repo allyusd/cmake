@@ -8,13 +8,10 @@ set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
-set(SrcDir ../src)
+set(SOURCE_DIR src)
 
-set(ALL_FILES
-  ${SrcDir}/mainwindow.h ${SrcDir}/mainwindow.cpp ${SrcDir}/mainwindow.ui
-  ${SrcDir}/tools/tool.h ${SrcDir}/tools/tool.cpp
-  ${SrcDir}/resources/resources.qrc
-)
+FILE(GLOB_RECURSE ALL_FILES RELATIVE ${CMAKE_CURRENT_SOURCE_DIR}
+  src/*.h src/*.cpp src/*.ui src/*.qrc)
 
 add_library(${PROJECT_NAME}Lib ${ALL_FILES})
 
@@ -36,5 +33,5 @@ endforeach()
 
 target_link_libraries(${PROJECT_NAME}Lib Qt5::Widgets)
 
-add_executable(${PROJECT_NAME} ${SrcDir}/main.cpp)
+add_executable(${PROJECT_NAME} ${SOURCE_DIR}/main.cpp)
 target_link_libraries(${PROJECT_NAME} ${PROJECT_NAME}Lib)

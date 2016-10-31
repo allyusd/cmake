@@ -1,6 +1,6 @@
 mkdir _build
 cd _build
-cmake ..
+cmake ../..
 
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
     make
